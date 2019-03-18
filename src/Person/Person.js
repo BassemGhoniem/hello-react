@@ -6,5 +6,5 @@ export default (props) =>
         <p onClick={props.click}>
             I'm {props.name} and I am {props.age} years old. <span>{props.children}</span>
         </p>
-        <input onChange={props.changed} value={props.name}/>
+        <input type='text' onChange={props.changed} value={props.name}/>
     </div>;
