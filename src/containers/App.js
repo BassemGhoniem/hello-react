@@ -26,9 +26,16 @@ class App extends Component {
     console.log('[App.js] componentDidMount')
   }
 
-  componentWillMount() {
-    console.log('[App.js] componentWillMount')
+  componentDidUpdate(prevProps, prevSate, snapshots) {
+    console.log('[App.js] componentDidUpdate')
+    console.log(snapshots);
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
+  }
+
   togglePersonsHandler = () => this.setState({showPersons: !this.state.showPersons})
   deletePersonHandler = (index) => this.setState({persons: [...this.state.persons].filter((v, i) => i !== index)})
 
